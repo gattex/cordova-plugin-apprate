@@ -294,16 +294,21 @@ AppRate = (function() {
         } else {
           iOSStoreUrl = PREF_STORE_URL_PREFIX_IOS9 + this.preferences.storeAppURL.ios + PREF_STORE_URL_POSTFIX_IOS9;
         }
-        cordova.InAppBrowser.open(iOSStoreUrl, '_system', 'location=no');
+        window.open(iOSStoreUrl, '_top', 'location=no')
+        // cordova.InAppBrowser.open(iOSStoreUrl, '_system', 'location=no');
       }
     } else if (/(Android)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.android, '_system', 'location=no');
+      window.open(this.preferences.storeAppURL.android, '_top', 'location=no');
+      // cordova.InAppBrowser.open(this.preferences.storeAppURL.android, '_system', 'location=no');
     } else if (/(Windows|Edge)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.windows, '_blank', 'location=no');
+      window.open(this.preferences.storeAppURL.windows, '_blank', 'location=no');
+      // cordova.InAppBrowser.open(this.preferences.storeAppURL.windows, '_blank', 'location=no');
     } else if (/(BlackBerry)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.blackberry, '_system', 'location=no');
+      window.open(this.preferences.storeAppURL.blackberry, '_top', 'location=no');
+      // cordova.InAppBrowser.open(this.preferences.storeAppURL.blackberry, '_system', 'location=no');
     } else if (/(IEMobile|Windows Phone)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.windows8, '_system', 'location=no');
+      window.open(this.preferences.storeAppURL.windows8, '_top', 'location=no');
+      // cordova.InAppBrowser.open(this.preferences.storeAppURL.windows8, '_system', 'location=no');
     }
     return this;
   };
